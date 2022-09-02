@@ -1,0 +1,28 @@
+MAXIMUM CENTRE-DISJOINT MERGEABLE DISKS
+=======================================
+
+This program finds solutions to instances of the problem introduced in
+the paper titled "Maximum Centre-disjoint Mergeable Disks" using an
+integer program.  The program uses Python's PuLP library, which can
+execute a number of different external tools for solving linear
+programs.
+
+To use the program, first install PuLP if it is not already installed:
+
+  $ pip install pulp
+
+Then, invoke the program as follows:
+
+  $ python mcmd.py <1.txt
+
+The program reads the set of input disks from the standard input.
+Each line of the input describes a disk as three values: the
+x-coordinate, the y-coordinate, and the radius of the disk.  By
+default, Euclidean distance is used.  If the coordinates use latitude
+and longitude, the -v option can be provided; the radius is assumed to
+be in meters with this option.
+
+A few examples are included in this package as .txt files.  For
+schools in Munich (figure 2 of the paper):
+
+  $ python mcmd.py -v <2.txt
